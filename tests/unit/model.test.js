@@ -17,10 +17,8 @@ describe('TodoService Unit Tests', () => {
 
         // Arrange
         const text = "Rua chen";
-
         // Act
         service.addTodo(text);
-
         // Assert
         const todos = service.getTodos();
         expect(todos.length).toBe(1); 
@@ -35,13 +33,11 @@ describe('TodoService Unit Tests', () => {
 
         // Arrange
         const text = "Nau an";
-
         // Act
         service.addTodo(text);
         const todos = service.getTodos();
         const todo = todos[0];
         const todoId = todo.id;
-
         // Assert
         service.toggleTodoComplete(todoId);
         expect(todo.completed).toBe(true);
@@ -56,13 +52,11 @@ describe('TodoService Unit Tests', () => {
 
         // Arrange
         const text = "Hoc bai";
-
         // Act
         service.addTodo(text);
         const todos = service.getTodos();
         const todo = todos[0];
         service.removeTodo(todo.id);
-
         // Assert
         expect(service.getTodos().length).toBe(0);
 
@@ -74,10 +68,8 @@ describe('TodoService Unit Tests', () => {
 
         // Arrange
         text = '';
-
         // Act
         service.addTodo(text);
-
         // Assert
         expect(service.getTodos.length).toBe(0);
     });
